@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import {io} from 'socket.io-client'
 import {Box, Button, Container, Stack, TextField, Typography} from '@mui/material'
 const App = () => {
-  const socket = useMemo(() => io("http://localhost:3000"), []);
+  const socket = useMemo(() => io("https://chat-app-ehty.onrender.com"), []);
 
   const [message,setMessage] =useState("");
   const [socketID,setSocketid] =useState("");

@@ -10,7 +10,7 @@ const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://chat-app-theta-jet-40.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -18,7 +18,7 @@ const io = new Server(server, {
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://chat-app-theta-jet-40.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -46,7 +46,7 @@ io.on("connection",(socket)=>{
     })
 })
 
-
-server.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+const PORT = process.env.PORT || 3000
+server.listen(PORT, () => {
+    console.log(`Server is running on PORT ${PORT}`);
 });
